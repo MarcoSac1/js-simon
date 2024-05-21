@@ -13,3 +13,13 @@ while (generatedNumber.length < 5) {
     }
     
 }
+
+const pageEL = document.getElementsByClassName('.list');
+const ùù
+
+
+for (let index = 0; index < generatedNumber.length; index++) {
+    const pEl = document.createElement('p');
+    pEl.innerHTML = generatedNumber[index];
+    pageEL.appendchild(pEl);
+}
