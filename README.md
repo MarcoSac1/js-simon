@@ -11,7 +11,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 <!-- workflow -->
 
 <!-- 
--creo una funzione che genera 5 numeri randomici 
+-creo una funzione che genera un array di  5 numeri randomici 
 -creo una timing function dalla durata di 30 secondi 
 -tramite un prompt chiedo al utente  di inserire i numeri visualizati  precedentemente in un prompt
 -faccio un controllo su i numeri inseriti dal utente che ritorna il risultato dei dati inseriti  -->
