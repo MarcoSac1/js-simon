@@ -64,9 +64,30 @@ for (let index = 0; index < 5; index++) {
     // console.log(generatedNumber);
     const newNumberEl = document.createElement('article');
     newNumberEl.append(generatedNumber[index]);
-
     containerEl.appendChild(newNumberEl);
 }
+
+setTimeout(function(){
+    containerEl.innerHTML = '';
+    setTimeout(function(){
+        console.log(retrieveGuesses (5));
+
+    }, 0);
+    
+}, 30000);
+
+function retrieveGuesses(numberOfGuesses) {
+    const requestedNumb = [];
+    for (let index = 0; index < 5; index++) {
+        requestedNumb.push(Number.parseInt(prompt('write the numbers you remember'), 10));
+        
+    }
+    return requestedNumb;
+}
+
+
+
+
 
 
 
