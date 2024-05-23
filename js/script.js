@@ -57,11 +57,17 @@
 
 
 const generatedNumber = [];
+const containerEl = document.querySelector('#container');
 
 for (let index = 0; index < 5; index++) {
     generatedNumber.push(getUniqueRandomInt(generatedNumber, 0, 100))
-    console.log(generatedNumber);
+    // console.log(generatedNumber);
+    const newNumberEl = document.createElement('article');
+    newNumberEl.append(generatedNumber[index]);
+
+    containerEl.appendChild(newNumberEl);
 }
+
 
 
 
