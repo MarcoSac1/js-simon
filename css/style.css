@@ -5,15 +5,22 @@
 }
 
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center
+
 }
 
 #container{
     background-color: greenyellow;
-    width: 1000px;
-    height: 1000px;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+}
+
+article{
+padding: 2rem;
+background-color: rebeccapurple;
+margin: .5rem;
+border-radius: 3rem;
+color: white;
 }
