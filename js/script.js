@@ -17,26 +17,57 @@ function prindedNumber(container, numGenerated) {
         };
     }
 
-setTimeout(function(){
+setTimeout(async function(){
     containerEl.innerHTML = '';
     let requestedNumb = [];
     
-    setTimeout(function(){
-        requestedNumb = retrieveGuesses (5);
-        console.log(generatedNumber, requestedNumb);
-        prindedNumber(containerEl, generatedNumber);
-        prindedNumber(containerEl, rightAnswers(generatedNumber, requestedNumb));
-    }, 0);
-    console.log(requestedNumb);
-}, 30000);
+    requestedNumb = await retrieveGuesses(5);
+    console.log(generatedNumber, requestedNumb);
+    prindedNumber(containerEl, generatedNumber);
+    prindedNumber(containerEl, rightAnswers(generatedNumber, requestedNumb));
+}, 20000);
 
 function retrieveGuesses(numberOfGuesses) {
-    const requestedNumb = [];
-    for (let index = 0; index < 5; index++) {
-        requestedNumb.push(Number.parseInt(prompt('write the numbers you remember'), 10));
+    return new Promise((resolve) => {
+        const requestedNumb = [];
+        let count = 1;
         
-    }
-    return requestedNumb;
+        const modalPrompt = document.querySelector('#modalPrompt');
+        const numberInput = document.querySelector('#numberInput');
+        const submitBtn = document.querySelector('#submitBtn');
+        const countText = document.querySelector('#countText');
+        
+        function showNextInput() {
+            if (count <= 5) {
+                countText.textContent = `Number ${count} of 5`;
+                numberInput.value = '';
+                numberInput.focus();
+                modalPrompt.classList.add('active');
+            } else {
+                modalPrompt.classList.remove('active');
+                resolve(requestedNumb);
+            }
+        }
+        
+        submitBtn.onclick = () => {
+            const num = parseInt(numberInput.value, 10);
+            if (!isNaN(num)) {
+                requestedNumb.push(num);
+                count++;
+                showNextInput();
+            } else {
+                alert('Please enter a valid number');
+            }
+        };
+        
+        numberInput.onkeypress = (e) => {
+            if (e.key === 'Enter') {
+                submitBtn.click();
+            }
+        };
+        
+        showNextInput();
+    });
 }
 
 function rightAnswers(numbers, guesses) {
