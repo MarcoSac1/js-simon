@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-
-}
 
 #container{
     background-color: greenyellow;
@@ -14,7 +11,6 @@ body{
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
-
 }
 
 article{
@@ -24,3 +20,11 @@ margin: .5rem;
 border-radius: 3rem;
 color: white;
 }
+
+h1{
+    text-align:center;
+    margin: 2rem;
+}
+
+
+

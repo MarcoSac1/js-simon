@@ -14,8 +14,7 @@ function prindedNumber(container, numGenerated) {
         const newNumberEl = document.createElement('article');
         newNumberEl.append(numGenerated[index]);
         containerEl.appendChild(newNumberEl);
-    };
-
+        };
     }
 
 setTimeout(function(){
@@ -51,12 +50,6 @@ function rightAnswers(numbers, guesses) {
     }
     return answers;
 }
-
-
-
-
-
-
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random()* ((max + 1 ) - min)) + min;
